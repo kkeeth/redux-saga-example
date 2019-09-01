@@ -25,16 +25,16 @@ class App extends Component {
         <h1>redux-saga demo app</h1>
         <p>
           Clicked: {this.props.counter} times{' '}
-          <button className="increment" onClick={::this.handleIncrement}>
+          <button className="increment" onClick={this.handleIncrement}>
             +
           </button>{' '}
-          <button className="decrement" onClick={::this.handleDecrement}>
+          <button className="decrement" onClick={this.handleDecrement}>
             -
           </button>{' '}
-          <button className="incrementIfOdd" onClick={::this.handleIncrementIfOdd}>
+          <button className="incrementIfOdd" onClick={this.handleIncrementIfOdd}>
             Increment if odd
           </button>{' '}
-          <button className="incrementAsync" onClick={::this.handleIncrementAsync}>
+          <button className="incrementAsync" onClick={this.handleIncrementAsync}>
             Increment async
           </button>
         </p>
