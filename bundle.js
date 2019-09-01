@@ -47423,8 +47423,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.incrementAsync = incrementAsync;
 exports["default"] = rootSaga;
 
-var _reduxSaga = require("redux-saga");
-
 var _effects = require("redux-saga/effects");
 
 var _actions = require("../actions");
@@ -47442,7 +47440,7 @@ function incrementAsync() {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return (0, _effects.call)(_reduxSaga.delay, 1000);
+          return (0, _effects.delay)(1000);
 
         case 2:
           _context.next = 4;
@@ -47461,9 +47459,10 @@ function rootSaga() {
     while (1) {
       switch (_context2.prev = _context2.next) {
         case 0:
-          return _context2.delegateYield((0, _effects.takeEvery)(_actions.INCREMENT_ASYNC, incrementAsync), "t0", 1);
+          _context2.next = 2;
+          return (0, _effects.takeEvery)(_actions.INCREMENT_ASYNC, incrementAsync);
 
-        case 1:
+        case 2:
         case "end":
           return _context2.stop();
       }
@@ -47471,7 +47470,7 @@ function rootSaga() {
   }, _marked2);
 }
 
-},{"../actions":435,"redux-saga":420,"redux-saga/effects":421}],442:[function(require,module,exports){
+},{"../actions":435,"redux-saga/effects":421}],442:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
