@@ -1,0 +1,1 @@
+console.error("\n/Users/k-kuwahara/src/github.com/k-kuwahara/redux-saga-example/src/app.js:1\nimport 'babel-polyfill';\n^\nParseError: 'import' and 'export' may appear only with 'sourceType: module'");
