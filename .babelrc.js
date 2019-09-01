@@ -1,7 +1,6 @@
 module.exports = {
   "presets": [
-    "es2015",
-    "stage-0",
-    "react"
+    "@babel/preset-env",
+    "@babel/preset-react"
   ]
 }
