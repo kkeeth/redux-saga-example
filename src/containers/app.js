@@ -1,52 +1,29 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { increment, decrement, incrementIfOdd, incrementAsync } from '../actions';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import App from '../components/App'
+import { increment, decrement, incrementIfOdd, incrementAsync } from '../actions'
 
-class App extends Component {
-  handleIncrement() {
-    this.props.dispatch(increment());
-  }
-
-  handleDecrement() {
-    this.props.dispatch(decrement());
-  }
-
-  handleIncrementIfOdd() {
-    this.props.dispatch(incrementIfOdd());
-  }
-
-  handleIncrementAsync() {
-    this.props.dispatch(incrementAsync());
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>redux-saga demo app</h1>
-        <p>
-          Clicked: {this.props.counter} times{' '}
-          <button className="increment" onClick={this.handleIncrement}>
-            +
-          </button>{' '}
-          <button className="decrement" onClick={this.handleDecrement}>
-            -
-          </button>{' '}
-          <button className="incrementIfOdd" onClick={this.handleIncrementIfOdd}>
-            Increment if odd
-          </button>{' '}
-          <button className="incrementAsync" onClick={this.handleIncrementAsync}>
-            Increment async
-          </button>
-        </p>
-      </div>
-    );
-  }
-}
-
-function mapStateToProps(state) {
+const mapStateToProps = state => {
   return {
-    counter: state.counter,
-  };
+    counter: state.counter
+  }
 }
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    handleIncrement: () => {
+      dispatch(increment())
+    },
+    handleDecrement: () => {
+      dispatch(decrement())
+    },
+    handleIncrementIfOdd: () => {
+      dispatch(incrementIfOdd())
+    },
+    handleIncrementAsync: () => {
+      dispatch(incrementAsync())
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

@@ -1,5 +1,5 @@
-import { takeEvery, delay } from 'redux-saga';
-import { put, call } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
+import { put, call, takeEvery } from 'redux-saga/effects';
 import { INCREMENT_ASYNC, increment } from '../actions';
 
 export function* incrementAsync() {
