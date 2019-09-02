@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const App = ({
   counter,
@@ -26,5 +27,13 @@ const App = ({
     </p>
   </div>
 )
+
+App.propTypes = {
+  counter: PropTypes.number.isRequired,
+  handleIncrement: PropTypes.func.isRequired,
+  handleDecrement: PropTypes.func.isRequired,
+  handleIncrementIfOdd: PropTypes.func.isRequired,
+  handleIncrementAsync: PropTypes.func.isRequired
+}
 
 export default App

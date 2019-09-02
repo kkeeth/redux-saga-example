@@ -47294,6 +47294,8 @@ exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var App = function App(_ref) {
@@ -47317,10 +47319,17 @@ var App = function App(_ref) {
   }, "Increment async")));
 };
 
+App.propTypes = {
+  counter: _propTypes["default"].number.isRequired,
+  handleIncrement: _propTypes["default"].func.isRequired,
+  handleDecrement: _propTypes["default"].func.isRequired,
+  handleIncrementIfOdd: _propTypes["default"].func.isRequired,
+  handleIncrementAsync: _propTypes["default"].func.isRequired
+};
 var _default = App;
 exports["default"] = _default;
 
-},{"react":387}],438:[function(require,module,exports){
+},{"prop-types":355,"react":387}],438:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
